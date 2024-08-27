@@ -1,0 +1,103 @@
+@use "./mixins/mixins.scss" as *;
+@use "./common/var.scss" as *;
+@use "./mixins/function.scss" as *;
+@use "./mixins/config.scss" as *;
+
+@include b(input) {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 38px;
+  & .#{$namespace}-input__clear,
+  & .#{$namespace}-input__password {
+    cursor: pointer;
+  }
+  @include e(wrapper) {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 11px;
+    background-image: none;
+    cursor: text;
+    transform: translateZ(0);
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  @include e(inner) {
+    width: 100%;
+    font-size: inherit;
+    height: 38px;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+
+    // override edge default style
+    &[type="password"]::-ms-reveal {
+      display: none;
+    }
+
+    &[type="number"] {
+      line-height: 1;
+    }
+  }
+  @include e(prefix) {
+    display: flex;
+    margin-right: 5px;
+  }
+  @include e(suffix) {
+    display: flex;
+    margin-left: 5px;
+  }
+}
+
+@include b(input-group) {
+  display: inline-flex;
+  width: 100%;
+  align-items: stretch;
+
+  @include e(prepend) {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  @include e(prepend) {
+    background-color: getCssVar("fill-color", "light");
+    color: getCssVar("color-info");
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    border-radius: getCssVar("input-border-radius");
+    padding: 0 20px;
+    white-space: nowrap;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  @include e(append) {
+    background-color: getCssVar("fill-color", "light");
+    color: getCssVar("color-info");
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    border-radius: getCssVar("input-border-radius");
+    padding: 0 20px;
+    white-space: nowrap;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

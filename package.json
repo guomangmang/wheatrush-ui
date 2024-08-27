@@ -1,0 +1,23 @@
+{
+  "name": "wheatrush_ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm -C play dev",
+    "doc": "pnpm -C docs dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wheatrush/components": "workspace:^",
+    "@wheatrush/theme-chalk": "workspace:^",
+    "@wheatrush/utils": "workspace:^",
+    "vue": "^3.4.38"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8",
+    "unplugin-vue-define-options": "^1.4.9"
+  }
+}

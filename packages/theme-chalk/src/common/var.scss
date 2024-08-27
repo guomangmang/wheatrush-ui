@@ -1,0 +1,84 @@
+@use "sass:map";
+$color-primary: #409eff;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-success: #67c23a;
+$color-warning: #e6a23a;
+$color-danger: #f56c6c;
+$color-info: #909399;
+
+// 朴素色
+
+$color-plain-primary: #ecf5ff;
+$color-plain-border-primary: #b3d8ff;
+$color-plain-white: #606266;
+$color-plain-border-white: #dcdfe6;
+$color-plain-success: #f0f9eb;
+$color-plain-border-success: #c2e7b0;
+$color-plain-warning: #fdf6ec;
+$color-plain-border-warning: #f5dab1;
+$color-plain-danger: #fef0f0;
+$color-plain-border-danger: #fbc4c4;
+
+$common-component-size: () !default;
+$common-component-size: map.merge(
+  (
+    "large": 40px,
+    "default": 32px,
+    "small": 24px,
+  ),
+  $common-component-size
+);
+
+// 字体颜色
+$text-color: () !default;
+$text-color: map.merge(
+  (
+    "primary": #303133,
+    "regular": #606266,
+    "secondary": #909399,
+    "placeholder": #a8abb2,
+    "disabled": #c0c4cc,
+  ),
+  $text-color
+);
+
+// 边框颜色
+$border-color: () !default;
+$border-color: map.merge(
+  (
+    "": #dcdfe6,
+    "light": #e4e7ed,
+    "lighter": #ebeef5,
+    "extra-light": #f2f6fc,
+    "dark": #d4d7de,
+    "darker": #cdd0d6,
+  ),
+  $border-color
+);
+
+// 字体颜色
+$fill-color: () !default;
+$fill-color: map.merge(
+  (
+    "": #f0f2f5,
+    "light": #f5f7fa,
+    "lighter": #fafafa,
+    "extra-light": #fafcff,
+    "dark": #ebedf0,
+    "darker": #e6e8eb,
+    "blank": #ffffff,
+  ),
+  $fill-color
+);
+
+// 背景颜色
+$bg-color: () !default;
+$bg-color: map.merge(
+  (
+    "": #ffffff,
+    "page": #f2f3f5,
+    "overlay": #ffffff,
+  ),
+  $bg-color
+);

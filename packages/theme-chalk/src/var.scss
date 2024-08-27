@@ -1,0 +1,24 @@
+@use "./common/var.scss" as *;
+@use "./mixins/mixins.scss" as *;
+// common
+:root {
+  @include set-css-var-value("color-white", $color-white);
+  @include set-css-var-value("color-black", $color-black);
+  @include set-css-var-value("color-info", $color-info);
+  //   @include set-css-var-value("fill-color-light", $color-black);
+}
+
+// for light
+:root {
+  color-scheme: light;
+
+  // color-scheme
+  // Background --el-bg-color-#{$type}
+  @include set-component-css-var("bg-color", $bg-color);
+  // --el-text-color-#{$type}
+  @include set-component-css-var("text-color", $text-color);
+  // --el-border-color-#{$type}
+  @include set-component-css-var("border-color", $border-color);
+  // Fill --el-fill-color-#{$type}
+  @include set-component-css-var("fill-color", $fill-color);
+}

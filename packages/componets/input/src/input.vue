@@ -69,6 +69,7 @@ import {
   ref,
   onMounted,
   nextTick,
+  inject,
 } from "vue";
 defineOptions({
   name: "gl-input",
@@ -92,9 +93,12 @@ const setNativeInputValue = () => {
   }
   inputEle.value = String(props.modelValue);
 };
+
+const formItemContext = inject("form-item");
 watch(
   () => props.modelValue,
   () => {
+    formItemContext.validate("change");
     setNativeInputValue();
   }
 );
@@ -123,6 +127,7 @@ const handleChange = (event) => {
 
 const handleBlur = (event) => {
   emit("blur", event);
+  formItemContext.validate("blur");
 };
 
 const focus = async (event) => {

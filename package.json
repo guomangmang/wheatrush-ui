@@ -14,6 +14,7 @@
     "@wheatrush/components": "workspace:^",
     "@wheatrush/theme-chalk": "workspace:^",
     "@wheatrush/utils": "workspace:^",
+    "async-validator": "^4.2.5",
     "vue": "^3.4.38"
   },
   "devDependencies": {

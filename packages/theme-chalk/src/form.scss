@@ -2,6 +2,7 @@
 @use "common/var" as *;
 @include b(form-item) {
   display: flex;
+  margin-bottom: 18px;
   @include e(label) {
     display: flex;
     justify-content: flex-end;
@@ -19,4 +20,8 @@
     color: $color-danger;
     font-size: 12px;
   }
+}
+
+@include b(form) {
+  max-width: 600px;
 }

@@ -40,6 +40,7 @@ export default {
                     text: '表单组件',
                     items: [
                         { text: 'Input 输入框', link: '/component/form/input' },
+                        { text: 'Form 表单', link: '/component/form/form' },
                     ]
                 }
             ]

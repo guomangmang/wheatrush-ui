@@ -6,7 +6,7 @@
       bem.is('success', validateState === 'success'),
     ]"
   >
-    <label :class="bem.e('label')">
+    <label :class="bem.e('label')" ref="labelRef" :style="style">
       <slot name="label">
         {{ label }}
       </slot>
@@ -26,8 +26,19 @@ import AsyncValidator from "async-validator";
 const bem = createNamespace("form-item");
 const props = defineProps(formItemProps);
 const formContext = inject("form");
+const labelRef = ref(null);
 defineOptions({
   name: "gl-form-item",
+});
+
+// 处理label的样式
+const style = computed(() => {
+  console.log(formContext, "formContext");
+  return {
+    ...(formContext.labelwidth.value
+      ? { width: formContext.labelwidth.value + "px" }
+      : {}),
+  };
 });
 
 // 这里主要是验证逻辑
@@ -72,12 +83,10 @@ const successHandle = () => {
 
 // 失败处理函数
 const errorHandle = (err) => {
-  console.log("失败", err);
   validateState.value = "error";
   validateMessage.value = err[0].message;
 };
 const validate = async (trigger, callback) => {
-  console.log("form-item的触发");
   const rules = getRuleFiltered(trigger);
   const modelName = props.prop;
   const validator = new AsyncValidator({
@@ -104,6 +113,16 @@ const context = {
 
 provide("form-item", context);
 onMounted(() => {
+  const width = getLabelWidth();
   formContext.addField(context);
+  formContext.addLabelWidth(width);
 });
+
+const getLabelWidth = () => {
+  const label = labelRef.value;
+  if (label) {
+    const { width } = label.getBoundingClientRect();
+    return width;
+  }
+};
 </script>

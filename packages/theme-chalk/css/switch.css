@@ -1,0 +1,127 @@
+.gl-switch {
+  --gl-switch-on-color: var(--gl-color-primary);
+  --gl-switch-off-color: var(--gl-border-color);
+}
+
+.gl-switch {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+  height: 32px;
+  vertical-align: middle;
+}
+.gl-switch__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  margin: 0;
+}
+.gl-switch__input:focus-visible ~ .gl-switch__core {
+  outline: 2px solid var(--gl-switch-on-color);
+  outline-offset: 1px;
+}
+
+.gl-switch__core {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: var(--gl-switch-off-color);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.gl-switch__core::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 1px;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+          box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+  background-color: var(--gl-color-white);
+}
+
+.gl-switch__label {
+  height: 20px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+}
+.gl-switch__label--left {
+  margin-right: 10px;
+}
+
+.gl-switch__label--right {
+  margin-left: 10px;
+}
+
+.gl-switch.is-checked .gl-switch__core {
+  background-color: #409eff;
+}
+.gl-switch.is-checked .gl-switch__core::after {
+  left: calc(100% - 17px);
+}
+
+.gl-switch.is-disabled {
+  cursor: not-allowed;
+}
+.gl-switch.is-disabled .gl-switch__core {
+  cursor: not-allowed;
+}
+
+.gl-switch--large {
+  height: 24px;
+}
+.gl-switch--large .gl-switch__core {
+  min-width: 50px;
+  height: 24px;
+}
+.gl-switch--large .gl-switch__core::after {
+  width: 20px;
+  height: 20px;
+}
+.gl-switch--large.is-checked .gl-switch__core {
+  background-color: #409eff;
+}
+.gl-switch--large.is-checked .gl-switch__core::after {
+  left: calc(100% - 17px);
+}
+
+.gl-switch--small {
+  height: 16px;
+}
+.gl-switch--small .gl-switch__core {
+  min-width: 30px;
+  height: 16px;
+}
+.gl-switch--small .gl-switch__core::after {
+  width: 12px;
+  height: 12px;
+}
+.gl-switch--small.is-checked .gl-switch__core {
+  background-color: #409eff;
+}
+.gl-switch--small.is-checked .gl-switch__core::after {
+  left: calc(100% - 17px);
+}

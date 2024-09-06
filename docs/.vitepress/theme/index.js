@@ -4,6 +4,8 @@ import GlIcon from '@wheatrush/components/icon'
 import GlButton from '@wheatrush/components/button'
 import GlInput from '@wheatrush/components/input'
 import { Form, FormItem } from '@wheatrush/components/form'
+import { Radio, RadioGroup } from '@wheatrush/components/radio'
+import Switch from '@wheatrush/components/switch'
 import '@wheatrush/theme-chalk/src/index.scss'
 export default {
     ...DefaultTheme,
@@ -13,5 +15,8 @@ export default {
         app.use(GlInput)
         app.use(Form)
         app.use(FormItem)
+        app.use(Radio)
+        app.use(RadioGroup)
+        app.use(Switch)
     }
 }

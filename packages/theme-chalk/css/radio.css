@@ -1,0 +1,38 @@
+.gl-radio {
+  --gl-radio-font-size: var(--gl-font-size-base);
+  --gl-radio-text-color: var(--gl-text-color-regular);
+  --gl-radio-font-weight: var(--gl-font-weight-primary);
+  --gl-radio-input-height: 14px;
+  --gl-radio-input-width: 14px;
+  --gl-radio-input-border-radius: var(--gl-border-radius-circle);
+  --gl-radio-input-bg-color: var(--gl-fill-color-blank);
+  --gl-radio-input-border: var(--gl-border);
+  --gl-radio-input-border-color: var(--gl-border-color);
+  --gl-radio-input-border-color-hover: var(--gl-color-primary);
+}
+
+.gl-radio {
+  color: var(--gl-radio-text-color);
+  font-weight: var(--gl-radio-font-weight);
+  position: relative;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
+  outline: none;
+  font-size: var(--gl-font-size-base);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-right: 30px;
+  height: 32px;
+}
+.gl-radio.is-disabled {
+  cursor: not-allowed;
+  border-color: var(--gl-border-color-lighter);
+}

@@ -1,0 +1,183 @@
+@use "sass:map";
+@use "./mixins/mixins.scss" as *;
+@use "./common/var.scss" as *;
+@use "./mixins/function.scss" as *;
+@use "./mixins/config.scss" as *;
+
+$switch-height: () !default;
+$switch-height: map.merge(
+  (
+    "large": 40px,
+    "default": 32px,
+    "small": 24px,
+  ),
+  $switch-height
+);
+
+$switch-font-size: () !default;
+$switch-font-size: map.merge(
+  (
+    "large": 14px,
+    "default": 14px,
+    "small": 12px,
+  ),
+  $switch-font-size
+);
+
+$switch-core-height: () !default;
+$switch-core-height: map.merge(
+  (
+    "large": 24px,
+    "default": 20px,
+    "small": 16px,
+  ),
+  $switch-core-height
+);
+
+$switch-core-width: () !default;
+$switch-core-width: map.merge(
+  (
+    "large": 50px,
+    "default": 40px,
+    "small": 30px,
+  ),
+  $switch-core-width
+);
+
+$switch-core-border-radius: () !default;
+$switch-core-border-radius: map.merge(
+  (
+    "large": 12px,
+    "default": 10px,
+    "small": 8px,
+  ),
+  $switch-core-border-radius
+);
+
+$switch-button-size: () !default;
+$switch-button-size: map.merge(
+  (
+    "large": 20px,
+    "default": 16px,
+    "small": 12px,
+  ),
+  $switch-button-size
+);
+
+@include b(switch) {
+  @include set-component-css-var("switch", $switch);
+}
+
+@include b(switch) {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-size: map.get($switch-font-size, "default");
+  line-height: map.get($switch-core-height, "default");
+  height: map.get($switch-height, "default");
+  vertical-align: middle;
+  @include e(input) {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+
+    &:focus-visible {
+      & ~ .#{$namespace}-switch__core {
+        outline: 2px solid getCssVar("switch-on-color");
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  @include e(core) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: map.get($switch-core-width, "default");
+    height: map.get($switch-core-height, "default");
+    background: getCssVar("switch-off-color");
+    border-radius: map.get($switch-core-border-radius, "default");
+    cursor: pointer;
+    transition-duration: 0.2s;
+    &::after {
+      content: "";
+      position: absolute;
+      width: map.get($switch-button-size, "default");
+      height: map.get($switch-button-size, "default");
+      left: 1px;
+      background-color: transparent;
+      border-radius: 50%;
+      transition-duration: 0.2s;
+      box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+      background-color: getCssVar("color-white");
+    }
+  }
+
+  @include e(label) {
+    height: map.get($switch-core-height, "default");
+    display: inline-block;
+    font-size: map.get($switch-font-size, "default");
+    font-weight: 500;
+    @include m(left) {
+      margin-right: 10px;
+    }
+    @include m(right) {
+      margin-left: 10px;
+    }
+  }
+
+  @include when(checked) {
+    .#{$namespace}-switch__core {
+      background-color: $color-primary;
+
+      &::after {
+        left: calc(100% - #{map.get($switch-button-size, "default") + 1px});
+      }
+    }
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+    .#{$namespace}-switch__core {
+      cursor: not-allowed;
+    }
+  }
+
+  @each $size in (large, small) {
+    @include m($size) {
+      height: map.get($switch-core-height, $size);
+
+      .#{$namespace}-switch__core {
+        min-width: map.get($switch-core-width, $size);
+        height: map.get($switch-core-height, $size);
+        &::after {
+          width: map.get($switch-button-size, $size);
+          height: map.get($switch-button-size, $size);
+        }
+      }
+
+      //   @include e(core) {
+      //     min-width: map.get($switch-core-width, $size);
+      //     height: map.get($switch-core-height, $size);
+
+      //     .#{$namespace}-switch__action {
+      //       width: map.get($switch-button-size, $size);
+      //       height: map.get($switch-button-size, $size);
+      //     }
+      //   }
+
+      @include when(checked) {
+        .#{$namespace}-switch__core {
+          background-color: $color-primary;
+
+          &::after {
+            left: calc(100% - #{map.get($switch-button-size, "default") + 1px});
+          }
+        }
+      }
+    }
+  }
+}

@@ -41,6 +41,8 @@ export default {
                     items: [
                         { text: 'Input 输入框', link: '/component/form/input' },
                         { text: 'Form 表单', link: '/component/form/form' },
+                        { text: 'Radio 单选', link: '/component/form/radio' },
+                        { text: 'Switch 开关', link: '/component/form/switch' },
                     ]
                 }
             ]

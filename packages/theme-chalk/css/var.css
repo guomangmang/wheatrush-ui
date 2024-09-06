@@ -1,0 +1,36 @@
+:root {
+  --gl-color-white: #ffffff;
+  --gl-color-black: #000000;
+  --gl-color-info: #909399;
+}
+
+:root {
+  color-scheme: light;
+  --gl-font-size-extra-large: 20px;
+  --gl-font-size-large: 18px;
+  --gl-font-size-medium: 16px;
+  --gl-font-size-base: 14px;
+  --gl-font-size-small: 13px;
+  --gl-font-size-extra-small: 12px;
+  --gl-bg-color: #ffffff;
+  --gl-bg-color-page: #f2f3f5;
+  --gl-bg-color-overlay: #ffffff;
+  --gl-text-color-primary: #303133;
+  --gl-text-color-regular: #606266;
+  --gl-text-color-secondary: #909399;
+  --gl-text-color-placeholder: #a8abb2;
+  --gl-text-color-disabled: #c0c4cc;
+  --gl-border-color: #dcdfe6;
+  --gl-border-color-light: #e4e7ed;
+  --gl-border-color-lighter: #ebeef5;
+  --gl-border-color-extra-light: #f2f6fc;
+  --gl-border-color-dark: #d4d7de;
+  --gl-border-color-darker: #cdd0d6;
+  --gl-fill-color: #f0f2f5;
+  --gl-fill-color-light: #f5f7fa;
+  --gl-fill-color-lighter: #fafafa;
+  --gl-fill-color-extra-light: #fafcff;
+  --gl-fill-color-dark: #ebedf0;
+  --gl-fill-color-darker: #e6e8eb;
+  --gl-fill-color-blank: #ffffff;
+}

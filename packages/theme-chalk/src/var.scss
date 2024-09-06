@@ -12,6 +12,8 @@
 :root {
   color-scheme: light;
 
+  @include set-component-css-var("font-size", $font-size);
+
   // color-scheme
   // Background --el-bg-color-#{$type}
   @include set-component-css-var("bg-color", $bg-color);

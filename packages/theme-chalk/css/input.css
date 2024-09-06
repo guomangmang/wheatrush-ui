@@ -1,0 +1,129 @@
+.gl-input {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 38px;
+}
+.gl-input .gl-input__clear, .gl-input .gl-input__password {
+  cursor: pointer;
+}
+.gl-input__wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1px 11px;
+  background-image: none;
+  cursor: text;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.gl-input__inner {
+  width: 100%;
+  font-size: inherit;
+  height: 38px;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.gl-input__inner:focus {
+  outline: none;
+}
+.gl-input__inner[type=password]::-ms-reveal {
+  display: none;
+}
+.gl-input__inner[type=number] {
+  line-height: 1;
+}
+
+.gl-input__prefix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5px;
+}
+
+.gl-input__suffix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5px;
+}
+
+.gl-input-group {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.gl-input-group__prepend {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.gl-input-group__prepend {
+  background-color: var(--gl-fill-color-light);
+  color: var(--gl-color-info);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100%;
+  border-radius: var(--gl-input-border-radius);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.gl-input-group__prepend:focus {
+  outline: none;
+}
+
+.gl-input-group__append {
+  background-color: var(--gl-fill-color-light);
+  color: var(--gl-color-info);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100%;
+  border-radius: var(--gl-input-border-radius);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.gl-input-group__append:focus {
+  outline: none;
+}

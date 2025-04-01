@@ -1,0 +1,66 @@
+@use "sass:map";
+@use "./mixins/mixins.scss" as *;
+@use "./common/var.scss" as *;
+@use "./mixins/function.scss" as *;
+@use "./mixins/config.scss" as *;
+
+@include b(message) {
+  @include set-component-css-var("message", $message);
+}
+
+@include b(message) {
+  width: 300px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: fixed;
+  left: 40%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+
+  @include m(content) {
+    padding: 0;
+    font-size: 12px;
+    text-align: center;
+    &:focus {
+      outline-width: 0;
+    }
+  }
+}
+
+.#{$namespace}-message--success {
+  background-color: $color-success;
+}
+
+.#{$namespace}-message--error {
+  background-color: $color-danger;
+}
+.#{$namespace}-message--warning {
+  background-color: $color-warning;
+}
+
+.#{$namespace}-message--info {
+  background-color: $color-info;
+}
+
+// 动画
+.#{$namespace}-message-fade-enter-from,
+.#{$namespace}-message-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.#{$namespace}-message-fade-enter-active {
+  transition: all 0.3s ease-in;
+}
+.#{$namespace}-message-fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+// .#{$namespace}-message-fade-enter-to,
+// .#{$namespace}-message-fade-leave-from {
+//   opacity: 1;
+//   transform: translateY(20px);
+// }

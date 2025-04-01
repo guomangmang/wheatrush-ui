@@ -43,6 +43,13 @@ export default {
                         { text: 'Form 表单', link: '/component/form/form' },
                         { text: 'Radio 单选', link: '/component/form/radio' },
                         { text: 'Switch 开关', link: '/component/form/switch' },
+                        { text: 'Select 选择器', link: '/component/form/select' },
+                    ]
+                },
+                {
+                    text: '反馈组件',
+                    items: [
+                        { text: 'Message 消息提示', link: '/component/feedback/message' },
                     ]
                 }
             ]

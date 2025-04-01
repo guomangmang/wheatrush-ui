@@ -1,0 +1,199 @@
+.gl-select {
+  --gl-select-border-color-hover: var(--gl-border-color-hover);
+  --gl-select-disabled-color: var(--gl-disabled-text-color);
+  --gl-select-disabled-border: var(--gl-disabled-border-color);
+  --gl-select-font-size: var(--gl-font-size-base);
+  --gl-select-close-hover-color: var(--gl-text-color-secondary);
+  --gl-select-input-color: var(--gl-text-color-placeholder);
+  --gl-select-multiple-input-color: var(--gl-text-color-regular);
+  --gl-select-input-focus-border-color: var(--gl-color-primary);
+  --gl-select-input-font-size: 14px;
+  --gl-select-width: 100%;
+}
+
+.gl-select {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: var(--gl-select-width);
+}
+.gl-select__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4px 12px;
+  min-height: 40px;
+  line-height: 24px;
+  font-size: 14px;
+  -webkit-box-shadow: 0 0 0 1px #dcdfe6 inset;
+          box-shadow: 0 0 0 1px #dcdfe6 inset;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.gl-select__wrapper:focus {
+  -webkit-box-shadow: 0 0 0 1px #409eff inset;
+          box-shadow: 0 0 0 1px #409eff inset;
+}
+
+.gl-select__suffix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  gap: 6px;
+}
+
+.gl-select__selection {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+  gap: 6px;
+}
+
+.gl-select__placeholder {
+  position: absolute;
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  color: #a8abb2;
+}
+
+.gl-select__menu {
+  list-style: none;
+  padding: 6px 0;
+  margin: 10px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e4e7ed;
+  border-radius: 4px;
+  background: #fff;
+  z-index: 999;
+}
+.gl-select__menu::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  border-style: solid;
+  border-width: 0 6px 6px 6px;
+  border-color: transparent;
+  border-bottom-color: #fff;
+}
+
+.gl-select__dropdown {
+  position: relative;
+}
+
+.gl-select__item {
+  font-size: 14px;
+  padding: 0 42px 0 20px;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 34px;
+  line-height: 34px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #606266;
+  cursor: pointer;
+}
+.gl-select__item:hover {
+  background-color: #f5f7fa;
+}
+
+.gl-select__labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gl-select__labels__item {
+  background-color: #f4f4f5;
+  color: #909399;
+  font-size: 12px;
+  border-width: 1px;
+  padding: 0 9px;
+  border-radius: 5px;
+  border-style: solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  white-space: nowrap;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+/* drop transition */
+.gl-select-dropdown-enter-from {
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.gl-select-dropdown-enter-to {
+  opacity: 1;
+  -webkit-transform: scaleY(0.8);
+          transform: scaleY(0.8);
+}
+
+.gl-select-dropdown-leave-from {
+  opacity: 1;
+  -webkit-transform: scaleY(0.8);
+          transform: scaleY(0.8);
+}
+
+.gl-select-dropdown-leave-to {
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.gl-select-dropdown-enter-active,
+.gl-select-dropdown-leave-active {
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}

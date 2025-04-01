@@ -105,7 +105,7 @@
   background-color: #409eff;
 }
 .gl-switch--large.is-checked .gl-switch__core::after {
-  left: calc(100% - 17px);
+  left: calc(100% - 21px);
 }
 
 .gl-switch--small {
@@ -123,5 +123,5 @@
   background-color: #409eff;
 }
 .gl-switch--small.is-checked .gl-switch__core::after {
-  left: calc(100% - 17px);
+  left: calc(100% - 13px);
 }

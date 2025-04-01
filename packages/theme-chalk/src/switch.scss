@@ -174,7 +174,7 @@ $switch-button-size: map.merge(
           background-color: $color-primary;
 
           &::after {
-            left: calc(100% - #{map.get($switch-button-size, "default") + 1px});
+            left: calc(100% - #{map.get($switch-button-size, $size) + 1px});
           }
         }
       }
